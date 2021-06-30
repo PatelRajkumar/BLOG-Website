@@ -33,4 +33,10 @@ class Comment(models.Model):
         ordering=('created',)
     def __str__(self):
         return 'Commented by {} on {}'.format(self.name,self.post)
+class AddPost(models.Model):
+    name=models.CharField(max_length=30)
+    email=models.CharField(max_length=30)
+    mobile_no=models.CharField(max_length=30)
+    title=models.CharField(max_length=200)
+    body=models.TextField()
     

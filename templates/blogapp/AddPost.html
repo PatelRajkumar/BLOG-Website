@@ -1,0 +1,22 @@
+{%extends 'blogapp/base.html'%} 
+{%block title_block%}
+Addpost
+{%endblock title_block%}
+{%block body_block%}
+{%block CSS%}
+<style>
+    .addpost{
+        
+        width: 140px;
+    }
+</style>
+{%endblock CSS%}
+<form method="POST">
+    <table>
+{{form.as_table}}
+{%csrf_token%}
+
+</table>
+<input type="submit" value="Submit">
+</form>
+{%endblock body_block%}

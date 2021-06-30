@@ -15,7 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR=os.path.join(BASE_DIR,'templates')
-STATIC_DIR=os.path.join(BASE_DIR,'static')
+STATIC_DIR=os.path.join(BASE_DIR,'static/')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -132,3 +132,15 @@ EMAIL_PORT=587
 EMAIL_HOST_USER="patelrajkumar3600@gmail.com"
 EMAIL_HOST_PASSWORD='9638404889patel'
 EMAIL_USE_TLS=True
+
+# SENDGRID_API_KEY='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'
+# EMAIL_HOST='smtp.sendgrid.net'
+# EMAIL_HOST_USER='apikey'
+# EMAIL_HOST_PASSWORD=SENDGRID_API_KEY
+# EMAIL_PORT=25
+# EMAIL_USE_TLS=True
+# EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
+
+
+
+

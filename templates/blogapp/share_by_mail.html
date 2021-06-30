@@ -4,9 +4,9 @@
 {%endblock%}
 {%block body_block%}
 {%if sent%}
-<h1> email sent sucssesfully</h1>
+<h1> E-mail Sent Sucssesfully</h1>
 {%else%}
-<h1>share "{{post.title}}" mail </h1>
+<h1>Share "{{post.title}}" Mail </h1>
 <form method="post">
 {{form.as_p}}
 {%csrf_token%}

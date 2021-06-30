@@ -1,29 +1,505 @@
 {%extends 'blogapp/base.html'%}
 {%block title_block%}
-RAJ'S BLOG
+Technical Times
 {%endblock%}
 {%block body_block%}
-<h1>RAJs project</h1>
+<h1 style="font-size: 45px; font-style:oblique "></h1>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  * {box-sizing: border-box;}
+  
+  body { 
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .header {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 20px 10px;
+  }
+  
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  
+  .header a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .header a.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+  
+  .header-right {
+    float: right;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    
+    .header-right {
+      float: none;
+    }
+  }
+  </style>
+  </head>
+
+
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {
+      font-family: 'Lato', sans-serif;
+    }
+    
+    .overlay {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgb(0,0,0);
+      background-color: rgb(170, 170, 170);
+      overflow-x: hidden;
+      transition: 0.5s;
+    }
+    
+    .overlay-content {
+      position: relative;
+      top: 25%;
+      width: 100%;
+      text-align: justify;
+      margin-top: 30px;
+    }
+    
+    .overlay a {
+      padding: 8px;
+      text-decoration: none;
+      font-size: 36px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+    
+    .overlay a:hover, .overlay a:focus {
+      color: #f1f1f1;
+    }
+    
+    .overlay .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 45px;
+      font-size: 60px;
+    }
+    
+    @media screen and (max-height: 450px) {
+      .overlay a {font-size: 20px}
+      .overlay .closebtn {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
+      }
+    }
+    </style>
+    </head>
+  
+
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    .card {
+      background-color: #f1f1f1;
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+    
+    .title {
+      color: grey;
+      font-size: 18px;
+    }
+    
+    button1 {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: rgb(51, 71, 187);
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+    
+    a {
+      text-decoration: none;
+      font-size: 22px;
+      color: black;
+    }
+    
+    button:hover, a:hover {
+      opacity: 0.7;
+    }
+    </style>
+    </head>
+
+
+
+
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+      
+      html {
+        box-sizing: border-box;
+      }
+      
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+      
+      .column {
+        float: left;
+        width: 33.3%;
+        margin-bottom: 16px;
+        padding: 0 8px;
+      }
+      
+      .card {
+        background-color: #474e5d;
+        
+        margin: 80px;
+      }
+      
+      .about-section {
+        margin-left: 50px;
+        margin-right: 50px;
+        padding: 50px;
+        text-align: left;
+        background-color: #474e5d;
+        color: white;
+      }
+      
+      .container {
+        padding: 0 16px;
+      }
+      
+      .container::after, .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      
+      .title {
+        color: grey;
+      }
+      
+      .button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+      }
+      
+      .button:hover {
+        background-color: #555;
+      }
+      .title1{
+        color: rgb(0, 0, 0);
+      }
+      .title2{
+        color: black;
+        font-size:xx-large;
+      }
+      
+      @media screen and (max-width: 650px) {
+        .column {
+          width: 100%;
+          display: block;
+        }
+      }
+      </style>
+      </head>
+
+
+
+
+
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        * {
+          box-sizing: border-box;
+        }
+        
+        /* Style inputs */
+        input[type=text], select, textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          margin-top: 6px;
+          margin-bottom: 16px;
+          resize: vertical;
+        }
+        
+        input[type=submit] {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+        
+        /* Style the container/contact section */
+        .container {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 10px;
+        }
+        
+        /* Create two columns that float next to eachother */
+        .column {
+          float: left;
+          width: 50%;
+          margin-top: 6px;
+          padding: 20px;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        .title3{
+          color: black;
+        }
+        
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+          .column, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+          }
+        }
+        </style>
+        </head>
+        
+        
+        <body>
+        
+        <div id="myNav1" class="overlay">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav1()">&times;</a>
+          <div class="overlay-content">
+          
+            <h1 style="text-align:center" class="title2">Our Team</h1>
+            <div class="row">
+              <div class="column">
+                <div class="card">
+                  
+                  <div class="container">
+                    <p class="title">--------------------------------------</p>
+                    <h2 class="title1">Dhrupal Patel</h2>
+                    <p class="title">--------------------------------------</p>
+                    <p class="title1">I am doing IT engineering in Ganpat University</p>
+                    <a  href="https://www.ganpatuniversity.ac.in/">Ganpat University</a>
+                    <a href="https://www.instagram.com/_dhrupal_patel_/"><i class="fa fa-instagram"></i></a> 
+                      <a href="#"><i class="fa fa-twitter"></i></a>  
+                      <a href="https://www.facebook.com/dhrupal.patel.3597/"><i class="fa fa-facebook"></i></a>
+                    <p class="title">pateldhrupal072@gmail.com</p>
+                    
+                  </div>
+                </div>
+              </div>
+            
+              
+              
+              <div class="column">
+                <div class="card">
+                  
+                  <div class="container">
+                    <p class="title">--------------------------------------</p>
+                    <h2 class="title1">Raj Patel</h2>
+                    <p class="title">--------------------------------------</p>
+                    <p class="title1">I am doing IT engineering in Ganpat University</p>
+                    <a  href="https://www.ganpatuniversity.ac.in/">Ganpat University</a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>   
+                    <a href="#"><i class="fa fa-linkedin"></i></a>  
+                    <a href="#"><i class="fa fa-facebook"></i></a> 
+                    <p class="title">raj@gmail.com</p>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          
+          </div>
+        </div>
+        
+        
+        
+        <script>
+        function openNav1() {
+          document.getElementById("myNav1").style.width = "100%";
+        }
+        
+        function closeNav1() {
+          document.getElementById("myNav1").style.width = "0%";
+        }
+        </script>
+             
+        </body>
+       
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+    
+      
+    
+    <body>
+
+      <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+
+
+          <body>
+
+            <div class="about-section">
+              <h1>About Us </h1>
+              <p>Blog-Project (Daily news reading website)</p>
+              <p>This website is Blog Project - Daily News Reading Website . so In our life we all daily read the news and blog through the news paper and new channel ect. But we can not upload the blog and not give the response like comment , share etc. so.. In this website you can read Daily uploaded bolg an Daily news and also you can give the response through comment.In this website if like any post or blog so you can share with your friend through E-mail.</p>
+              <p>Now a days to aware about latest news is necessary thing but today no-one have time to read whole news paper or to watch news channel for many hours . so if there is platform where user’s news reading experience is far better than reading news paper and watching news channels . user can update about latest news from anywhere in the world with it’s mobile . news are to the point without doing unnecessary things like in news channels .This site will make a daily news reading more time-efficient.</p>  
+            </div>
+            
+            
+            
+            </body>
+
+          
+          
+        </div>
+      </div>
+      
+      
+      
+      <script>
+      function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+      }
+      
+      function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+      }
+      </script>
+           
+      </body>
+
+    
+
+
+
+
+
+  <body>
+  
+  <div class="header">
+    <a href="#default" class="logo">Technical Times</a>
+    <div class="header-right">
+      <a onclick="openNav()" href="#home">About</a>
+      <a onclick="openNav1()" href="#contact">Contact Us</a>
+      <a onclick="openNav()" href="{%url 'addpost'%}">Add Post</a>
+      
+    </div>
+  </div>
+  
+  
+  </body>
+  
+
+
 {%for blog in post_list%}
-<h2><a href="{{blog.get_absolute_url}}">{{blog.title}}</a></h2><p id="date">  published by {{blog.author|title}} on date {{blog.publish}}</p>
+<h2><a style="text-decoration: none;" href="{{blog.get_absolute_url}}">{{blog.title}}</a></h2><p style="color: rgb(0, 0, 0); font:bold" id="date">  published by {{blog.author|title}} On Date {{blog.publish}}</p>
 {%if tag%}
  <h2>Posts tagged with "{{tag.name}}"</h2>
  {%endif%}
 Tags: {%for tag in blog.tags.all%}
-<a href="{%url 'post_list_by_tag_name' tag.slug%}">{{tag.name}}</a>
+<a  style="text-decoration: none;font-size:large" href="{%url 'post_list_by_tag_name' tag.slug%}">{{tag.name}}</a>&nbsp;
 {%endfor%}
 {{blog.body|truncatewords:30|linebreaks}}
 {%endfor%}
 <div class="paginator">
 <span>
 {%if post_list.has_previous%}
-<a href="?page={{post_list.previous_page_number}}">previous</a>
+
+
+<button onclick="document.location='?page={{post_list.previous_page_number}}'">PREVIOUS</button>
+
 {%endif%}
 </span>
 <span class="current">page {{post_list.number}} of {{post_list.paginator.num_pages}}</span>
 <span>
 {%if post_list.has_next%}
-<a href="?page={{post_list.next_page_number}}"> next</a>
+<button onclick="document.location='?page={{post_list.next_page_number}}'">NEXT</button>
+
 {%endif%}
 </span>
 </div>

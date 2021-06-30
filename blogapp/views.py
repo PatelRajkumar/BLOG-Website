@@ -1,7 +1,15 @@
 from django.shortcuts import render,get_object_or_404
 from blogapp.models import Post,Comment
-from blogapp.forms import Comment_form
+from blogapp.forms import Comment_form,AddPost_form
 from taggit.models import Tag
+import sendgrid
+from sendgrid.helpers.mail import *
+import os
+import smtplib
+from django.core.mail import EmailMessage
+s = smtplib.SMTP('smtp.gmail.com', 25)
+s.ehlo()
+s.starttls()
 # Create your views here.
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 def post_list_view(request,tag_slug=None):
@@ -42,12 +50,21 @@ def send_by_mail(request,id):
     if request.method=='POST':
         form=forms.email_send(request.POST)
         if form.is_valid():
+            sg = sendgrid.SendGridAPIClient(os.environ.get('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'))
             cd=form.cleaned_data
-            subject='{}( {}) recomends you to rad {} post'.format(cd['name'],cd['email'],post.title)
+            subject='{} ({}) recomends you to read {} post'.format(cd['name'],cd['email'],post.title)
             post_url=request.build_absolute_uri(post.get_absolute_url())
-            mesaage='read post at :\n {} \n\{} \'s omments :\n{}'.format(post_url,cd['name'],cd['comments'])
-            send_mail(subject,mesaage,'patelrajkumar3600@gmail.com',[cd['to']])
+            message='read post at :\n {} \n{}\'s comments :\n{}'.format(post_url,cd['name'],cd['comments'])
+            send_mail(subject, message, 'patelrajkumar3600@gmail.com', [cd['to']])
             sent=True
     else:
         form=forms.email_send()
     return render(request,'blogapp/share_by_mail.html',{'form':form,'post':post,'sent':sent})
+def AddPost_view(request):
+    form=AddPost_form()
+    if request.method=='POST':
+        form=AddPost_form(request.POST)
+        if form.is_valid():
+            form.save()
+            form=AddPost_form()
+    return render(request, 'blogapp/AddPost.html',{'form':form})

@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url,include
+from django.urls import path
 from blogapp import views
 urlpatterns = [
     url('admin/', admin.site.urls),
@@ -23,4 +24,6 @@ urlpatterns = [
     url(r'^(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})/(?P<post>[-\w]+)/$', views.post_detail_view,name='post_detail'), 
      url(r'^(?P<id>\d+)/share/$', views.send_by_mail),
      url(r'^api/',include('blogapp.api.urls')),
+     path('addpost/',views.AddPost_view,name='addpost')
+    
 ]
